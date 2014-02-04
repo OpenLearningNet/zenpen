@@ -1,7 +1,7 @@
 var editor = (function() {
 
 	// Editor elements
-	var headerField, contentField, cleanSlate, lastType, currentNodeList, savedSelection;
+	var /*headerField,*/ contentField, cleanSlate, lastType, currentNodeList, savedSelection;
 
 	// Editor Bubble elements
 	var textOptions, optionsBox, boldButton, italicButton, quoteButton, urlButton, urlInput;
@@ -15,7 +15,7 @@ var editor = (function() {
 		// Set cursor position
 		var range = document.createRange();
 		var selection = window.getSelection();
-		range.setStart(headerField, 1);
+		//range.setStart(headerField, 1);
 		selection.removeAllRanges();
 		selection.addRange(range);
 
@@ -77,7 +77,7 @@ var editor = (function() {
 
 	function bindElements() {
 
-		headerField = document.querySelector( '.header' );
+		//headerField = document.querySelector( '.header' );
 		contentField = document.querySelector( '.content' );
 		textOptions = document.querySelector( '.text-options' );
 
@@ -215,16 +215,16 @@ var editor = (function() {
 
 	function saveState( event ) {
 		
-		localStorage[ 'header' ] = headerField.innerHTML;
+		//localStorage[ 'header' ] = headerField.innerHTML;
 		localStorage[ 'content' ] = contentField.innerHTML;
 	}
 
 	function loadState() {
-
+		/*
 		if ( localStorage[ 'header' ] ) {
 			headerField.innerHTML = localStorage[ 'header' ];
 		}
-
+		*/
 		if ( localStorage[ 'content' ] ) {
 			contentField.innerHTML = localStorage[ 'content' ];
 		}
