@@ -231,11 +231,11 @@ var editor = (function() {
 	}
 
 	function onBoldClick() {
-		document.execCommand( 'bold', false );
+		document.execCommand( 'bold', false, null );
 	}
 
 	function onItalicClick() {
-		document.execCommand( 'italic', false );
+		document.execCommand( 'italic', false, null );
 	}
 
 	function onQuoteClick() {
@@ -244,7 +244,7 @@ var editor = (function() {
 
 		if ( hasNode( nodeNames, 'BLOCKQUOTE' ) ) {
 			document.execCommand( 'formatBlock', false, 'p' );
-			document.execCommand( 'outdent' );
+			document.execCommand( 'outdent', false, null );
 		} else {
 			document.execCommand( 'formatBlock', false, 'blockquote' );
 		}
@@ -307,7 +307,7 @@ var editor = (function() {
 		rehighlightLastSelection();
 
 		// Unlink any current links
-		document.execCommand( 'unlink', false );
+		document.execCommand( 'unlink', false, null );
 
 		if (url !== "") {
 		
