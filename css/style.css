@@ -328,6 +328,10 @@ a:hover {
 	font-style: italic;
 }
 
+.options .bold {
+	font-weight: bold;
+}
+
 .options button {
 	-webkit-transition: all 250ms ease-in-out;
 	-moz-transition: all 250ms ease-in-out;
