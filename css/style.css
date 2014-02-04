@@ -296,14 +296,14 @@ a:hover {
 	background-color: rgba(0,0,0,0.9);
 	position: absolute;
 	border-radius: 5px;
-	margin-left: -46px;
+	margin-left: -56px;
 	margin-top: -30px;
 	z-index: 1000;
 	padding-left: 4px;
 	padding-right: 4px;
 	padding-top: 4px;
 	padding-bottom: 4px;
-	width: 92px;
+	width: 112px;
 	height: 28px;
 
 	-webkit-transition: all 100ms ease-in-out;
@@ -331,6 +331,10 @@ a:hover {
 
 .options .bold {
 	font-weight: bold;
+}
+
+.options .underline {
+	text-decoration: underline;
 }
 
 .options button {

@@ -89,6 +89,9 @@ var editor = (function() {
 		italicButton = textOptions.querySelector( '.italic' );
 		italicButton.onclick = onItalicClick;
 
+		underlineButton = textOptions.querySelector( '.underline' );
+		underlineButton.onclick = onUnderlineClick;
+
 		quoteButton = textOptions.querySelector( '.quote' );
 		quoteButton.onclick = onQuoteClick;
 
@@ -164,6 +167,12 @@ var editor = (function() {
 			italicButton.className = "italic"
 		}
 
+		if ( hasNode( currentNodeList, 'U') ) {
+			underlineButton.className = "underline active"
+		} else {
+			underlineButton.className = "underline"
+		}
+		
 		if ( hasNode( currentNodeList, 'BLOCKQUOTE') ) {
 			quoteButton.className = "quote active"
 		} else {
@@ -236,6 +245,10 @@ var editor = (function() {
 
 	function onItalicClick() {
 		document.execCommand( 'italic', false, null );
+	}
+
+	function onUnderlineClick() {
+		document.execCommand( 'underline', false, null );
 	}
 
 	function onQuoteClick() {
