@@ -271,7 +271,7 @@ var ui = (function() {
 		saveFormat = targ.getAttribute('data-format');
 		
 		//var header = document.querySelector('header.header');
-		//var headerText = header.innerHTML.replace(/(\r\n|\n|\r)/gm,"") + "\n";
+		var headerText = '';//header.innerHTML.replace(/(\r\n|\n|\r)/gm,"") + "\n";
 		
 		var body = document.querySelector('article.content');
 		var bodyText = body.innerHTML;
