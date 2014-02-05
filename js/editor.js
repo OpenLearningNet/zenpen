@@ -7,10 +7,10 @@ var zenpen = (function() {
 	var textOptions, optionsBox, boldButton, italicButton, quoteButton, urlButton, urlInput;
 
 
-	function init(element) {
+	function init(contentElement, optionsElement) {
 
 		lastRange = 0;
-		bindElements(element);
+		bindElements(contentElement, optionsElement);
 
 		// Set cursor position
 		var range = document.createRange();
@@ -61,17 +61,27 @@ var zenpen = (function() {
 		});
 	}
 
-	function bindElements(contentElement) {
+	function bindElements(contentElement, optionsElement) {
 
-      if (!contentElement) {
-         contentElement = '.content'; // default
-      }
-      if (typeof contentElement === 'string' || contentElement instanceof String) {
-         contentElement = document.querySelector( contentElement );
-      }
+        if (!contentElement) {
+            contentElement = '.content'; // default
+        }
+
+        if (!optionsElement) {
+            optionsElement = '.text-options';
+        }
+
+        if (typeof contentElement === 'string' || contentElement instanceof String) {
+            contentElement = document.querySelector( contentElement );
+        }
+
+        if (typeof optionsElement === 'string' || optionsElement instanceof String) {
+            optionsElement = document.querySelector( optionsElement );
+        }
+
 		//headerField = document.querySelector( '.header' );
 		contentField = contentElement;
-		textOptions = document.querySelector( '.text-options' );
+		textOptions = optionsElement;
 
 		optionsBox = textOptions.querySelector( '.options' );
 
