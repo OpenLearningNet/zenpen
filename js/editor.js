@@ -182,9 +182,9 @@ var zenpen = (function() {
 		}
 
 		if ( hasNode( currentNodeList, 'A') ) {
-			urlButton.className = "url useicons active"
+			urlButton.className = "url active"
 		} else {
-			urlButton.className = "url useicons"
+			urlButton.className = "url"
 		}
 	}
 
@@ -326,17 +326,6 @@ var zenpen = (function() {
 	function rehighlightLastSelection() {
 
 		window.getSelection().addRange( lastSelection );
-	}
-
-	function getWordCount() {
-		
-		var text = get_text( contentField );
-
-		if ( text === "" ) {
-			return 0
-		} else {
-			return text.split(/\s+/).length;
-		}
 	}
 
 	return init;
