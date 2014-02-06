@@ -130,7 +130,7 @@ var zenpen = (function() {
 			currentNodeList = findNodes( selection.focusNode );
 
 			// Find if highlighting is in the editable area
-			if ( hasNode( currentNodeList, "ARTICLE") ) {
+			if ( hasNode( currentNodeList, "Editable Area") ) {
 				updateBubbleStates();
 				updateBubblePosition();
 
@@ -207,6 +207,10 @@ var zenpen = (function() {
 		var nodeNames = {};
 
 		while ( element.parentNode ) {
+
+            if (element === contentField) {
+                nodeNames["Editable Area"] = true;
+            }
 
 			nodeNames[element.nodeName] = true;
 			element = element.parentNode;
